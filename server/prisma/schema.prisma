@@ -1,0 +1,22 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id       String    @id @default(uuid())
+  title    String    @unique
+  reviews  Review[]
+}
+
+model Review {
+  id        String  @id @default(uuid())
+  rating    Int
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+}
