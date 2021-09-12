@@ -3,44 +3,19 @@ const { PrismaClient } = require("@prisma/client");
 const fs = require("fs");
 const path = require("path");
 
-const prisma = new PrismaClient();
+// Resolvers
+const Query = require("./resolvers/Query");
+const Mutation = require("./resolvers/Mutation");
+const Product = require("./resolvers/Product");
 
 const resolvers = {
-  Query: {
-    product: (parent, { productId }, { prisma }) => {
-      return prisma.product.findUnique({
-        where: { id: productId },
-        include: {
-          reviews: true,
-        },
-      });
-    },
-  },
-  Mutation: {
-    createProduct: (parent, { title }, { prisma }) => {
-      return prisma.product.create({
-        data: {
-          title,
-        },
-      });
-    },
-    addReview: (parent, { productId, rating }, { prisma }) => {
-      return prisma.review.create({
-        data: {
-          rating,
-          productId,
-        },
-      });
-    },
-  },
-  Product: {
-    reviews: ({ reviews }) => {
-      return reviews ? reviews : [];
-    },
-  },
+  Query,
+  Mutation,
+  Product,
 };
 
-// 3
+const prisma = new PrismaClient();
+
 const server = new ApolloServer({
   typeDefs: fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8"),
   resolvers,
