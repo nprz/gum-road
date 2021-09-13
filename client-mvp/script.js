@@ -113,9 +113,9 @@ window.addEventListener("load", (event) => {
     await addReview(rating, description);
     const completeReviews = document.getElementsByClassName("complete-review");
     for (let i = 0; i < completeReviews.length; i++) {
-      completeReviews[i].remove();
+      completeReviews[i].parentNode.removeChild(completeReviews[i]);
     }
-    setValues();
+    await setValues();
   }
 
   const starContainer = document.getElementById("star-container");

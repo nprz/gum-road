@@ -17,12 +17,11 @@ async function addReview(
   { productId, rating, description },
   { prisma }
 ) {
-  const d = description ? { description } : {};
   const newReview = await prisma.review.create({
     data: {
       productId,
       rating,
-      ...d,
+      description,
     },
   });
 

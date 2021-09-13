@@ -1,0 +1,7 @@
+mutation AddReview($productId: ID!, $rating: Float!, $description: String) {
+  addReview(productId: $productId, rating: $rating, description: $description) {
+    id
+    description
+    rating
+  }
+}
