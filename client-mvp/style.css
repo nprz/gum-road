@@ -1,0 +1,111 @@
+.modal-content-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bi-star-fill {
+  color: #646464;
+  font-size: 24px;
+  width: 30px;
+}
+
+.bi-star-fill:hover {
+  color: #ffb200;
+  cursor: pointer;
+}
+
+.star-container {
+  display: flex;
+}
+
+.star-view {
+  display: flex;
+  align-items: center;
+}
+
+.page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.review-container {
+  width: 60%;
+  margin-top: 128px;
+}
+
+.title-content {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.title-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.average {
+  margin-bottom: 0px;
+  margin-right: 16px;
+}
+
+.gum-road-button {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.gum-road-button:hover {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.complete-review {
+  display: flex;
+  align-items: center;
+}
+
+.star-container-complete {
+  margin-right: 16px;
+}
+
+.complete-rating {
+  color: black;
+}
+
+.complete-review {
+  color: #929292;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.padding48 {
+  padding: 48px;
+}
+
+.margin36 {
+  margin-bottom: 36px;
+}

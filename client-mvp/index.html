@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Review Product</title>
+    <meta name="description" content="Review Gumroad Product" />
+
+    <meta property="og:title" content="Review Gumroad Product" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="review-container">
+        <div class="title-content margin36">
+          <h2 class="bold margin36">Product Name</h2>
+          <div class="title-details">
+            <div class="star-view">
+              <h1 class="average light">3.8</h1>
+              <div class="star-containeru" id="star-containeru">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              class="gum-road-button"
+            >
+              Add Review
+            </button>
+          </div>
+        </div>
+        <h4 class="bold margin36">Reviews</h4>
+        <div class="complete-review">
+          <div class="star-container-complete">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <div class="complete-rating bold">6</div>
+          <div class="complete-review">, this was a good book</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body padding48">
+            <div class="content">
+              <div class="modal-content-title">
+                <h2 class="margin36">What's your rating?</h2>
+              </div>
+              <div class="margin36">Rating</div>
+              <div class="star-container margin36" id="star-container">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="margin36">Review</div>
+              <input placeholder="Start typing..." class="margin36 input" />
+              <button class="gum-road-button" data-bs-dismiss="modal">
+                Submit review
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
