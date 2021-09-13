@@ -12,11 +12,17 @@ async function createProduct(parent, { title }, { prisma }) {
   return newProduct;
 }
 
-async function addReview(parent, { productId, rating }, { prisma }) {
+async function addReview(
+  parent,
+  { productId, rating, description },
+  { prisma }
+) {
+  const d = description ? { description } : {};
   const newReview = await prisma.review.create({
     data: {
-      rating,
       productId,
+      rating,
+      ...d,
     },
   });
 

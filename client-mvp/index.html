@@ -32,16 +32,16 @@
     <div class="page">
       <div class="review-container">
         <div class="title-content margin36">
-          <h2 class="bold margin36">Product Name</h2>
+          <h2 class="bold margin36" id="product-title"></h2>
           <div class="title-details">
             <div class="star-view">
-              <h1 class="average light">3.8</h1>
+              <h1 class="average light"></h1>
               <div class="star-containeru" id="star-containeru">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill average-star"></i>
+                <i class="bi bi-star-fill average-star"></i>
+                <i class="bi bi-star-fill average-star"></i>
+                <i class="bi bi-star-fill average-star"></i>
+                <i class="bi bi-star-fill average-star"></i>
               </div>
             </div>
             <button
@@ -55,17 +55,6 @@
           </div>
         </div>
         <h4 class="bold margin36">Reviews</h4>
-        <div class="complete-review">
-          <div class="star-container-complete">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <div class="complete-rating bold">6</div>
-          <div class="complete-review">, this was a good book</div>
-        </div>
       </div>
     </div>
 
@@ -84,17 +73,26 @@
               <div class="modal-content-title">
                 <h2 class="margin36">What's your rating?</h2>
               </div>
-              <div class="margin36">Rating</div>
+              <h5 class="margin36 light">Rating</h5>
               <div class="star-container margin36" id="star-container">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill star-hover"></i>
+                <i class="bi bi-star-fill star-hover"></i>
+                <i class="bi bi-star-fill star-hover"></i>
+                <i class="bi bi-star-fill star-hover"></i>
+                <i class="bi bi-star-fill star-hover"></i>
               </div>
-              <div class="margin36">Review</div>
-              <input placeholder="Start typing..." class="margin36 input" />
-              <button class="gum-road-button" data-bs-dismiss="modal">
+              <h5 class="margin36 light">Review</h5>
+              <input
+                placeholder="Start typing..."
+                class="margin36 input"
+                id="description-id"
+                type="text"
+              />
+              <button
+                class="gum-road-button"
+                id="submit-button"
+                data-bs-dismiss="modal"
+              >
                 Submit review
               </button>
             </div>
