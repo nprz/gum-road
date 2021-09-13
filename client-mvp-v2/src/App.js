@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import { GumroadModal } from "./components/GumroadModal";
 import { ReviewListItem } from "./components/ReviewListItem";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { loader } from "graphql.macro";
 import { useQuery } from "@apollo/client";
@@ -42,19 +43,21 @@ const useStyles = makeStyles({
   reviewsContainer: {
     overflow: "scroll",
   },
+  loadingContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
 });
 
 function App() {
   const classes = useStyles();
-  const { data: { product: { title, reviews = [] } = {} } = {} } = useQuery(
-    GET_PRODUCT,
-    {
+  const { data: { product: { title, reviews = [] } = {} } = {}, loading } =
+    useQuery(GET_PRODUCT, {
       variables: {
         productId: "06150932-979c-427c-ba3e-b7100b263510",
       },
       pollInterval: 500,
-    }
-  );
+    });
 
   const getAverage = useCallback(
     (rounded) => {
@@ -95,11 +98,17 @@ function App() {
           </div>
         </div>
         <div className={classes.subtitle}>Reviews</div>
-        <div className={classes.reviewsContainer}>
-          {[...reviews]?.reverse()?.map((r) => (
-            <ReviewListItem {...r} key={r.id} />
-          ))}
-        </div>
+        {loading ? (
+          <div className={classes.loadingContainer}>
+            <CircularProgress />
+          </div>
+        ) : (
+          <div className={classes.reviewsContainer}>
+            {[...reviews]?.reverse()?.map((r) => (
+              <ReviewListItem {...r} key={r.id} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
